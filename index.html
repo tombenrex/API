@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="description" content="API User Generator" />
+    <meta name="keywords" content="API, User, Generator" />
+    <meta name="author" content="Tom Larsson" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>API</title>
+    <script
+      src="https://kit.fontawesome.com/70f7a209bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body class="grid">
+    <header class="header">
+      <button id="show-all">Show all users</button>
+      <nav id="all-user-modal"></nav>
+    </header>
+
+    <section class="user-section">
+      <header class="section-header">
+        <h2>random user generator</h2>
+      </header>
+
+      <div class="random-box">
+        <article id="random-user"></article>
+
+        <button id="more-btn">Show More <span id="moreLess"></span></button>
+        <div id="modal-content"></div>
+      </div>
+
+      <button id="generate-btn">
+        generate new user<span id="timer"></span
+        ><i class="fa-solid fa-user-plus"></i>
+      </button>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 TomBenRex</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+/*=========== TABLE OF CONTENTS ===========
+1. Imports // Fonts
+2. General Styles
+3.
+
+=========================================*/
+
+/*-------------------------------------
+ 1. Imports
+--------------------------------------*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Style+Script&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+/*-------------------------------------
+ 2. General Styles
+--------------------------------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00adb5;
+  color: #eeeeee;
+  font-family: "Poppins", sans-serif;
+}
+
+/*-------------------------------------
+ 2. 
+--------------------------------------*/
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  justify-items: center;
+  align-items: center;
+}
+
+.header {
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.user-section {
+  background-color: #393e46;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  border: 0.2rem solid #eee;
+  display: inline-grid;
+}
+
+#random-user {
+  line-height: 2rem;
+  color: #000;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  margin-bottom: 1rem;
+}
+
+.section-header {
+  text-transform: capitalize;
+  padding: 1rem;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  border-bottom: 0.2rem solid #eee;
+}
+
+.article-header {
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.random-box {
+  background-color: #eee;
+  border: 0.2rem solid #eee;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#generate-btn {
+  max-width: 300px;
+  padding: 0.7rem;
+  margin: 1rem;
+  border: 0.2rem solid #eee;
+  border-radius: 10px;
+  background-color: #222831;
+  color: #eee;
+  font-family: "open sans";
+  text-transform: capitalize;
+  font-weight: bold;
+  transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+  justify-self: center;
+}
+
+button {
+  font-size: clamp(0.7rem, 1.3vw, 1.3rem);
+}
+
+article h3 {
+  text-decoration: underline;
+}
+
+:where(#more-btn, #generate-btn):active {
+  transform: scale(1.1);
+}
+
+#more-btn:hover,
+#generate-btn:hover {
+  background-color: #00adb5;
+}
+
+.fa-user-plus {
+  margin-left: 0.5rem;
+}
+
+footer {
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.box-header {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#modal-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  border: 0.2rem solid #000;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  z-index: 1;
+}
+
+#modal-content.active {
+  display: inline-block;
+}
+
+#more-btn {
+  max-width: 200px;
+  padding: 0.5rem;
+  color: #eee;
+  border: 0.2rem solid #eee;
+  border-radius: 10px;
+  background-color: #222831;
+  justify-self: center;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #393e46;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #393e46;
+}
+
+.user-table tr:hover {
+  background-color: #444;
+}
+
+#all-user-modal.active {
+  display: block;
+}
+
+#all-user-modal {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  z-index: 1;
+  top: 10%; /* Adjust this to control the position */
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 80%; /* You can adjust this to control the width of the modal */
+  max-height: 70vh; /* Limits the height of the modal */
+  overflow-y: auto; /* Makes the modal scrollable if content exceeds max-height */
+  padding-right: 20px; /* Prevents content from being hidden by scrollbar */
+}
+
+/* Optional: If you want to add some responsiveness */
+@media (max-width: 768px) {
+  #all-user-modal {
+    max-width: 90%;
+    max-height: 60vh;
+  }
+  .user-table th,
+  .user-table td {
+    font-size: 1rem;
+  }
+}
