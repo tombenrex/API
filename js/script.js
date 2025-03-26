@@ -30,6 +30,8 @@ export function fetchData() {
  2. Generate Random User
 --------------------------------------*/
 
+let lastUser = -1;
+
 export function getRandomUser() {
   if (users.length === 0) {
     console.log("No data available. Please fetch the data first.");
@@ -39,8 +41,14 @@ export function getRandomUser() {
   }
 
   userContainer.innerHTML = "";
+  let randomIndex;
 
-  const randomIndex = Math.floor(Math.random() * users.length);
+  do {
+    randomIndex = Math.floor(Math.random() * users.length);
+  } while (randomIndex === lastUser);
+
+  lastUser = randomIndex;
+
   randomUser = users[randomIndex];
 
   const header = document.createElement("header");
